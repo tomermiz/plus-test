@@ -50,7 +50,6 @@ export class StockService implements  OnDestroy  {
   }
 
   private refreshFeeds(): void{
-    console.log('refreshFeeds');
     this.httpService.getFeeds(this.feedsUpdateDate).subscribe((feeds: FeedsModel) => {
       const stockFeeds = feeds.Feeds.map(this.entityMapperService.mapFeed);
       this.feedsUpdateDate = feeds.LastUpdate;

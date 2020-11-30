@@ -27,7 +27,6 @@ export class EntityMapperService {
   }
 
   mapFeed(data: any): FeedModel {
-   // console.log(data.BuyPrice,isNumber(data.BuyPrice) );
     return {
       StockId: data.StockId,
       BuyPrice:    isNumber(data.BuyPrice) ?  data.BuyPrice : 0,

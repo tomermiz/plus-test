@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  stocksApi: 'http://35.234.70.59/api/'
+  stocksApi: 'http://35.234.70.59/api/',
+  updateIntervalInSeconds: 5,
+  maxPriceHistory: 100
 };
 
 /*

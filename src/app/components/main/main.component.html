@@ -1,0 +1,3 @@
+<app-stock-table (stockSelected)="handleStockSelected($event)" ></app-stock-table>
+<hr>
+<app-stock-history-details  *ngIf="selectedStockId" [selectedStockId]="selectedStockId"></app-stock-history-details>

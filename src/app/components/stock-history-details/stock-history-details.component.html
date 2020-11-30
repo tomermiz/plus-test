@@ -1,0 +1,20 @@
+
+<div class="stock-history-container" *ngIf="stock">
+  Historic Prices For {{stock.Name}} {{stock.Symbol}}
+  <table>
+    <tr>
+      <th>BuyPrice</th>
+      <th>SellPrice</th>
+    </tr>
+    <ng-container *ngFor="let pricePair of stock.PricePair.reverse()">
+      <tr>
+        <td>{{ pricePair.BuyPrice}}</td>
+        <td>{{ pricePair.SellPrice }}</td>
+      </tr>
+    </ng-container>
+
+
+  </table>
+</div>
+
+

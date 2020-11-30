@@ -1,0 +1,24 @@
+<p>stock-table works!</p>
+Click on the symbol for more info<br>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Symbol</th>
+    <th>BuyPrice</th>
+    <th>SellPrice</th>
+  </tr>
+
+  <ng-container *ngFor="let stock of stockService.stockData$ | async">
+  <tr>
+    <td>{{ stock.Id }}</td>
+    <td><a style="cursor: pointer; color: blue;" (click)="selectStock(stock.Id)">{{ stock.Name }}</a></td>
+    <td>{{ stock.Symbol }}</td>
+    <td>{{ stock.BuyPrice}}</td>
+    <td>{{ stock.SellPrice }}</td>
+  </tr>
+  </ng-container>
+
+
+</table>
+

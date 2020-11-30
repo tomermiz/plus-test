@@ -12,7 +12,7 @@ Click on the symbol for more info<br>
   <ng-container *ngFor="let stock of stockService.stockData$ | async">
   <tr>
     <td>{{ stock.Id }}</td>
-    <td><a style="cursor: pointer; color: blue;" (click)="selectStock(stock.Id)">{{ stock.Name }}</a></td>
+    <td><div style="cursor: pointer; color: blue;" (click)="selectStock(stock.Id)">{{ stock.Name }}</div></td>
     <td>{{ stock.Symbol }}</td>
     <td>{{ stock.BuyPrice}}</td>
     <td>{{ stock.SellPrice }}</td>

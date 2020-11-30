@@ -34,25 +34,9 @@ export class StockService implements  OnDestroy  {
   initData(): void{
     // emit value in sequence every X second
 
-    // .interval(environment.updateIntervalInSeconds)
-    // .timeInterval()
-    // .flatMap(() => this.notificationService.getNotifications(this.token))
-    // .subscribe(data => {
-    //   console.log(data);
-    // });
-    // const source = interval(environment.updateIntervalInSeconds);
-    // this.dataUpdateSubscription = source.subscribe(val => {
-    //   this.httpService.getStocks().subscribe((stocks: StockDataModel[]) => {
-    //     this.stocks = stocks;
-    //   });
-    // });
-
     this.httpService.getStocks().pipe(
       map((data: any[]) => data.map(this.entityMapperService.mapStock))
     ).subscribe((stocks: StockDataModel[]) => {
-      stocks.forEach((stock) => {
-        stock.PricePair = [];
-      });
       this.stocks = stocks;
     });
 
